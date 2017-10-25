@@ -8,33 +8,55 @@
   <h1>The Ultimate Answer to <br><span class="highlighter">All Problems</span></h1>
 </head>
 <body>
-  <p>Whether you are happy or sad... Duck is always here for us</p>
-  <div class="key">
+  Whether you are happy or sad... Duck is always here for us
+  <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
       <span class="sound">Set yourself free</span>
     </div>
     <div data-key="83" class="key">
-      <kbd>A</kbd>
-      <span class="sound">Don't be shy</span>
+      <kbd>S</kbd>
+      <span class="sound">Dont be shy</span>
     </div>
     <div data-key="68" class="key">
-      <kbd>A</kbd>
+      <kbd>D</kbd>
       <span class="sound">May Duck be your side</span>
     </div>
     <div data-key="70" class="key">
-      <kbd>A</kbd>
+      <kbd>F</kbd>
       <span class="sound">All hail Duck!</span>
     </div>
   </div>
-</body>
 
-<audio data-key="65" scr="sound/quack.mp3"></audio>
-<audio data-key="83" scr="sound/quack.mp3"></audio>
-<audio data-key="68" scr="sound/quack.mp3"></audio>
-<audio data-key="70" scr="sound/hypnotoad.mp3"></audio>
-
+  <audio data-key="65" src="sound/quack.wav"></audio>
+  <audio data-key="83" src="sound/quack.wav"></audio>
+  <audio data-key="68" src="sound/quack.wav"></audio>
+  <audio data-key="70" src="sound/hypnotoad.wav"></audio>
 
 <script>
 
+function playSound(e){
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+  if(!audio)  return;
+  key.classList.add('playing');
+  audio.currentTime = 0;
+
+  console.log(audio);
+  audio.play();
+}
+
+function removeButtonAni(e) {
+  if(e.propertyName!=='transform')  return;
+  this.classList.remove('playing');
+}
+
+const keys = Array.from(document.querySelectorAll('.key'));
+keys.forEach(key => key.addEventListener('transitionend', removeButtonAni));
+
+window.addEventListener('keydown', playSound);
+
 </script>
+</body>
+</html>
