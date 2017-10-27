@@ -41,7 +41,7 @@ h1:hover {
   width: 300px;
   color: #d2dbaa;
 
-  transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: all .07s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .playing {
