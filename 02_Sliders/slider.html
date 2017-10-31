@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CSS property sliders</title>
+  <title>Fidget Board</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif|Sacramento">
 </head>
 <body>
-  <h1>Make your own blob</h1>
-  <span></span>
+  <h1>Play it!</h1>
+  <div class="controller">
+    <label for="blur">Blur : </label>
+    <input type="range" name="blur" min="0" max="20" value="10" data-sizing="px" />
+    <label for="title">Title (Optional) : </label>
+    <input type="text" name="title" class="titleTextBox"/>
+    <label for="story"> </label>
+    <input type="text" name="story" class="contentTextBox" size="1000"/>
+    <label for="spoid">Colour : </label>
+    <input type="color" name="spoid" value="#000000" />
+    <input type="button" name="addTagButton" class="button" />
+    <input type="text" name="tags" class="tagTextBox" placeholder="Add hex colour code(s), separated by comma. Maximum 3 codes allowed (The rest will be ignored!)"/>
+    <input type="button" name="submit" class="button" />
+  </div>
 </body>
 </html>

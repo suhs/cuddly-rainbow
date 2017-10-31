@@ -1,1 +1,24 @@
-html{}
+html{
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+h1{
+
+}
+
+.controller{
+}
+
+.titleTextBox{
+  width: 200px;
+}
+
+.contentTextBox{
+  width: 400px;
+  height: 600px;
+}
+
+.tagTextBox{
+  width: 100px;
+}
